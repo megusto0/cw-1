@@ -1,25 +1,25 @@
 public class Employee {
-    private String name, middleName, lastName;
+    private String name, patronymic, lastName;
     private int department;
     private int salary = 0;
     private final int id;
-    private static int i = 1;
+    private static int count = 1;
 
-    public Employee(String middleName, String name, String lastName, int department, int salary) {
+    public Employee(String lastName, String name, String patronymic, int department, int salary) {
         this.name = name;
-        this.middleName = middleName;
+        this.patronymic = patronymic;
         this.lastName = lastName;
         this.department = department;
         this.salary = salary;
-        this.id = i++;
+        this.id = count++;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getMiddleName() {
-        return middleName;
+    public String getPatronymic() {
+        return patronymic;
     }
 
     public String getLastName() {
@@ -42,7 +42,7 @@ public class Employee {
     public String toString() {
         return "Employee{" +
                 "name='" + name + '\'' +
-                ", middleName='" + middleName + '\'' +
+                ", patronymic='" + patronymic + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", department=" + department +
                 ", salary=" + salary +
