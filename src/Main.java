@@ -28,10 +28,10 @@ public class Main {
         printEmployeesNames();
 
         Employee minimalSalary = minimalSalaryEmployee();
-        System.out.println("Минимальная зарпалат = " + minimalSalary.getSalary());
+        System.out.println("Минимальная зарпалата: " + strFio(minimalSalary) + ", " + minimalSalary.getSalary());
 
         Employee maximalSalary = maximalSalaryEmployee();
-        System.out.println("Максимальная зарплата = " + maximalSalary.getSalary());
+        System.out.println("Максимальная зарплата = " + strFio(maximalSalary) + ", " + maximalSalary.getSalary());
 
         System.out.println("Средняя зарпалта = " + averageSalary());
 
@@ -89,5 +89,9 @@ public class Main {
             if (employee != null) numberOfEmployees++;
         }
         return totalSalary() / numberOfEmployees;
+    }
+
+    public static String strFio(Employee employee) {
+        return employee.getLastName() + " " + employee.getName() + " " + employee.getPatronymic();
     }
 }
